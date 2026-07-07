@@ -18,7 +18,7 @@ RUN pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av runpod 
     https://github.com/camenduru/wheels/releases/download/tost/mmcv-2.1.0-cp310-cp310-linux_x86_64.whl \
     munch pydub phonemizer einops einops-exts git+https://github.com/resemble-ai/monotonic_align.git nltk librosa
 
-RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/TMElyralab/MuseTalk /content/MuseTalk
+RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/TMElyralab/MuseTalk /content/MuseTalk && cd /content/MuseTalk && git checkout 865a68c60e && cd /content
 RUN GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/yl4579/StyleTTS2 /content/bucilianus
 
 RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M https://huggingface.co/camenduru/MuseTalk/resolve/main/dwpose/dw-ll_ucoco.pth -d /content/MuseTalk/models/dwpose -o dw-ll_ucoco.pth && \
