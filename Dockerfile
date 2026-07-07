@@ -14,7 +14,7 @@ RUN apt update -y && add-apt-repository -y ppa:git-core/ppa && apt update -y && 
 USER camenduru
 
 RUN pip install -q opencv-python imageio imageio-ffmpeg ffmpeg-python av runpod \
-    transformers==4.39.2 diffusers==0.27.2 accelerate==0.28.0 omegaconf mmpose mmdet moviepy soundfile \
+    transformers==4.39.2 diffusers==0.27.2 accelerate==0.28.0 omegaconf mmpose mmdet moviepy==1.0.3 soundfile \
     https://github.com/camenduru/wheels/releases/download/tost/mmcv-2.1.0-cp310-cp310-linux_x86_64.whl \
     munch pydub phonemizer einops einops-exts git+https://github.com/resemble-ai/monotonic_align.git nltk librosa
 
